@@ -1,10 +1,8 @@
 import Quickshell
-import Quickshell.Io
 import QtQuick
 import Quickshell.Widgets
 
 Scope {
-
   Variants {
     model: Quickshell.screens;
     PanelWindow {
@@ -24,5 +22,4 @@ Scope {
       }
     }
   }
-
 }
