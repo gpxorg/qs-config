@@ -4,43 +4,25 @@ import QtQuick
 import Quickshell.Widgets
 
 Scope {
+
   Variants {
     model: Quickshell.screens;
+    PanelWindow {
+      required property var modelData
+      screen: modelData
 
-    delegate: Component {
-      PanelWindow {
-        required property var modelData
+      anchors {
+        top: true
+        left: true
+        right: true
+      }
+      implicitHeight: 30
 
-        screen: modelData
-
-        anchors {
-          top: true
-          left: true
-          right: true
-        }
-        implicitHeight: 30
-
-        Text {
-          id: clock
-          anchors.centerIn: parent
-
-          Process {
-            id: dateProc
-            command: ["date"]
-            running: true
-
-            stdout: StdioCollector {
-              onStreamFinished: clock.text = this.text
-            }
-          }
-          Timer {
-            interval: 1000
-            running: true
-            repeat: true
-            onTriggered: dateProc.running = true
-          }
-        }
+      Text {
+        anchors.centerIn: parent
+        text: Clock.time
       }
     }
   }
+
 }
