@@ -3,6 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell.Widgets
 import Quickshell.Hyprland
+import qs.services
 
 Scope {
   Variants {

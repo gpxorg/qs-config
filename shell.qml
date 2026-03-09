@@ -1,4 +1,4 @@
-import "./modules/bar/"
+import qs.modules
 
 import Quickshell
 
