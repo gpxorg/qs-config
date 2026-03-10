@@ -1,23 +1,41 @@
 import QtQuick
+import QtQuick.Controls
 import Quickshell
 
-Item {
-  id: root
-  Rectangle { 
-    width: 30
-    height: 14
-    radius: 6
+Rectangle {
+  id: shell
+  width: 28
+  height: 16
+  radius: 5
+  color: "#aaaaaa"
+  anchors.verticalCenter: parent.verticalCenter
+  
+  Item {
+    anchors {
+      top: parent.top
+      bottom: parent.bottom
+      left: parent.left
+    }
+    width: parent.width * 0.5
     clip: true
-    color: "#A1A1A1"
+
     Rectangle {
-      radius: 8
-      height: parent.height
-      width: (65 / 100) * parent.width
-      color: "#ffffff" 
+      width: shell.width
+      height: shell.height
+      radius: shell.radius
+      color: "#ffffff"
     }
   }
 
-  
-  implicitWidth: 30
-  implicitHeight:  14
+  Text {
+    id: batteryLabel
+    width: shell.width
+    height: shell.height
+    horizontalAlignment: Text.AlignHCenter
+    verticalAlignment: Text.AlignVCenter
+    text: "50"
+    color: "#000000"
+    font.weight: 400
+    font.pointSize: 8
+  }
 }
