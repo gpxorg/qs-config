@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Effects
 import Quickshell
 import Quickshell.Services.UPower
 
@@ -53,14 +52,14 @@ Row {
           font.weight: 600
           font.pointSize: 8
           clip: true
-
         }
       }
     }
   }
   Rectangle {
-    width: 3
-    height: 7
+    width: 2.65
+    height: 7.3
+    color: shell.per < 0.96 ? shell.color : fill.color
     topRightRadius: 4
     bottomRightRadius: 4
     anchors.verticalCenter: parent.verticalCenter
