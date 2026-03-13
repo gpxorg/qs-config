@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Effects
 import Quickshell
 import Quickshell.Services.UPower
 
@@ -19,14 +20,14 @@ Rectangle {
       bottom: parent.bottom
       left: parent.left
     }
-    width: parent.width * shell.per
+    width: parent.width * 1
     clip: true
 
     Rectangle {
       width: shell.width
       height: shell.height
       radius: shell.radius
-      color: shell.state === UPowerDeviceState.Charging ? "#36D96F" : UPowerDeviceState.Empty ? "#E84743" : "#ffffff"
+      color: "#73BA82"
     }
   }
 
@@ -38,7 +39,15 @@ Rectangle {
     verticalAlignment: Text.AlignVCenter
     text: Math.round(shell.per * 100)
     color: "#000000"
-    font.weight: 400
+    font.weight: 600
     font.pointSize: 8
+
+    layer.enabled: true
+    layer.effect: MultiEffect {
+      shadowEnabled: true
+      shadowColor: "#ffffff"
+      shadowBlur: 0.9
+      shadowOpacity: 0.8
+    }
   }
 }
