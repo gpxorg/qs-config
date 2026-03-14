@@ -8,7 +8,7 @@ Scope {
     PanelWindow {
       required property var modelData
       screen: modelData
-      color: "#3D3D3D"
+      color: "#000000"
       anchors {
         top: true
         left: true
