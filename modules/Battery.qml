@@ -6,7 +6,7 @@ import qs.services
 Row {
   id: root
   property real batWidth: 30
-  property real batHeight: 14
+  property real batHeight: 16
   property real nubWidth: 3
   property real nubHeight: 6
   property real radius: 6

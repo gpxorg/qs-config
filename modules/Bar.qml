@@ -14,7 +14,7 @@ Scope {
         left: true
         right: true
       }
-      implicitHeight: 30
+      implicitHeight: 36
 
       RowLayout {
         anchors.fill: parent
