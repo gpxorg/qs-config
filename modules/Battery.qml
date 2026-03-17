@@ -1,38 +1,35 @@
 import QtQuick
 import QtQuick.Controls
 import Quickshell
-import Quickshell.Services.UPower
+import qs.services
 
-// RED - bg: #4D2F2F, fg: #f05454
-// ORANGE - bg: #524018, fg: #FF9812
-// GREEN - bg: #1E301E, fg: #5BC75B
-// WHITE - bg: #4D4D4D, fg: E6E6E6
-//
-// TODO: Change the variables and make use of BatteryService.qml as well as the 
-// colors of the widget.
-// TODO: Animations for the widget and panel for more info. 
+Item {
+  id: root
+  property real batWidth: 30
+  property real batHeight: 16
+  property real nubWidth: 3
+  property real nubHeight: 6
+  property real radius: 6
 
-Row {
-  spacing: 1.5
+  implicitWidth: batWidth + nubWidth
+  implicitHeight: batHeight
+
   Rectangle {
-    readonly property var state: UPower.displayDevice.state
-    readonly property real per: UPower.displayDevice.percentage
-    id: shell
-    width: 28
-    height: 16
-    radius: 5
-    color: "#4d4d4d"
-    anchors.verticalCenter: parent.verticalCenter
+    id: track
+    width: root.batWidth
+    height: root.batHeight
+    radius: root.radius
+    color: Battery.colors.bg
 
     Text {
-      width: shell.width
-      height: shell.height
+      width: track.width
+      height: track.height
       horizontalAlignment: Text.AlignHCenter
       verticalAlignment: Text.AlignVCenter
-      text: Math.round(shell.per * 100)
-      color: fill.color
+      text: Math.round(Battery.value * 100)
+      color: Battery.colors.fg
       font.weight: 800
-      font.pointSize: 8
+      font.pointSize: 7.5
     }
     
     Item {
@@ -41,37 +38,39 @@ Row {
         bottom: parent.bottom
         left: parent.left
       }
-      width: parent.width * shell.per
+      width: parent.width * Battery.value
       clip: true
 
       Rectangle {
         id: fill
-        width: shell.width
-        height: shell.height
-        radius: shell.radius
-        color: "#E6E6E6"
+        width: track.width
+        height: track.height
+        radius: track.radius
+        color: Battery.colors.fg
 
         Text {
           id: batteryLabel
-          width: shell.width
-          height: shell.height
+          width: track.width
+          height: track.height
           horizontalAlignment: Text.AlignHCenter
           verticalAlignment: Text.AlignVCenter
-          text: Math.round(shell.per * 100)
-          color: shell.color
+          text: Math.round(Battery.value * 100)
+          color: Battery.colors.bg
           font.weight: 800
-          font.pointSize: 8
+          font.pointSize: 7.5
           clip: true
         }
       }
     }
   }
   Rectangle {
-    width: 2.5
-    height: 6
-    color: shell.per < 0.96 ? shell.color : fill.color
-    topRightRadius: 3
-    bottomRightRadius: 3
+    id: nub
+    width: root.nubWidth
+    height: root.nubHeight
+    x: track.width + 1
+    color: Battery.value < 0.99 ? track.color : fill.color
+    topRightRadius: 20
+    bottomRightRadius: 20
     anchors.verticalCenter: parent.verticalCenter
   }
 }
