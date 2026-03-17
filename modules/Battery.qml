@@ -3,23 +3,22 @@ import QtQuick.Controls
 import Quickshell
 import qs.services
 
-Item {
+Row {
   id: root
   property real batWidth: 30
-  property real batHeight: 16
+  property real batHeight: 14
   property real nubWidth: 3
   property real nubHeight: 6
   property real radius: 6
 
-  implicitWidth: batWidth + nubWidth
-  implicitHeight: batHeight
-
+  spacing: 1
   Rectangle {
     id: track
     width: root.batWidth
     height: root.batHeight
     radius: root.radius
     color: Battery.colors.bg
+    anchors.verticalCenter: parent.verticalCenter
 
     Text {
       width: track.width
@@ -67,7 +66,6 @@ Item {
     id: nub
     width: root.nubWidth
     height: root.nubHeight
-    x: track.width + 1
     color: Battery.value < 0.99 ? track.color : fill.color
     topRightRadius: 20
     bottomRightRadius: 20

@@ -6,9 +6,9 @@ WrapperMouseArea {
   cursorShape: Qt.SplitVCursor
   onWheel: (wheel) => {
     if (wheel.angleDelta.y > 0) {
-      Hyprland.dispatch("workspace " + Math.min(Math.max(Hyprland.focusedWorkspace.id - 1, 1), 6))
+      Hyprland.dispatch("workspace e-1")
     } else {
-      Hyprland.dispatch("workspace " + Math.min(Math.max(Hyprland.focusedWorkspace.id + 1, 1), 6))
+      Hyprland.dispatch("workspace e+1")
     }
   }
 
