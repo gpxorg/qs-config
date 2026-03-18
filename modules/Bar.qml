@@ -1,6 +1,7 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
+import qs.misc
 
 Scope {
   Variants {
@@ -8,13 +9,13 @@ Scope {
     PanelWindow {
       required property var modelData
       screen: modelData
-      color: "#000000"
+      color: Theme.colors.bg3
       anchors {
         top: true
         left: true
         right: true
       }
-      implicitHeight: 36
+      implicitHeight: Theme.size.barHeight
 
       RowLayout {
         anchors.fill: parent

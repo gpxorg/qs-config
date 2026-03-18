@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell.Hyprland
 import Quickshell.Widgets
+import qs.misc
 
 WrapperMouseArea {
   cursorShape: Qt.SplitVCursor
@@ -14,6 +15,7 @@ WrapperMouseArea {
 
   Text {
     text: "Workspace " + Hyprland.focusedWorkspace.id
-    color: "#ffffff"
+    color: Theme.colors.primary1
+    font.weight: 800
   }
 }
