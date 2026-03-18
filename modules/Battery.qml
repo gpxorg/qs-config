@@ -1,21 +1,17 @@
 import QtQuick
-import QtQuick.Controls
 import Quickshell
 import qs.services
+import qs.misc
 
 Row {
   id: root
-  property real batWidth: 30
-  property real batHeight: 16
-  property real nubWidth: 3
-  property real nubHeight: 6
   property real radius: 6
 
   spacing: 1
   Rectangle {
     id: track
-    width: root.batWidth
-    height: root.batHeight
+    implicitWidth: Theme.size.batteryWidth
+    implicitHeight: Theme.size.batteryHeight
     radius: root.radius
     color: Battery.colors.bg
     anchors.verticalCenter: parent.verticalCenter
@@ -63,9 +59,9 @@ Row {
     }
   }
   Rectangle {
-    id: nub
-    width: root.nubWidth
-    height: root.nubHeight
+    id: batteryNub
+    implicitWidth: Theme.size.batteryNubWidth
+    implicitHeight: Theme.size.batteryNubHeight
     color: Battery.value < 0.99 ? track.color : fill.color
     topRightRadius: 20
     bottomRightRadius: 20
