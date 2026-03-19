@@ -10,11 +10,14 @@ Singleton {
   property QtObject colors
 
   size: QtObject {
-    property int barHeight: 30
-    property int batteryWidth: 30
-    property int batteryHeight: 16
-    property int batteryNubWidth:3
-    property int batteryNubHeight: 6
+    readonly property QtObject bar: QtObject{
+       readonly property real height: 35
+    }
+    readonly property QtObject battery: QtObject {
+      readonly property real width: 26
+      readonly property real height: 16
+      readonly property real radius: 6
+    }
   }
 
   colors: QtObject {
@@ -30,5 +33,4 @@ Singleton {
     property string fg2: "#CFDBD5"
     property string fg3: "#BCC7C2"
   }
-// https://coolors.co/bcc7c2-cfdbd5-e8eddf-efdc9e-f5cb5c-8d7840-242423-2c2d2b-333533
 }

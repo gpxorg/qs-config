@@ -15,7 +15,7 @@ Scope {
         left: true
         right: true
       }
-      implicitHeight: Theme.size.barHeight
+      implicitHeight: Theme.size.bar.height
 
       RowLayout {
         anchors.fill: parent

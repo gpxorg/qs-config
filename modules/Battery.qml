@@ -5,66 +5,32 @@ import qs.misc
 
 Row {
   id: root
-  property real radius: 6
-
   spacing: 1
+
   Rectangle {
-    id: track
-    implicitWidth: Theme.size.batteryWidth
-    implicitHeight: Theme.size.batteryHeight
-    radius: root.radius
-    color: Battery.colors.bg
-    anchors.verticalCenter: parent.verticalCenter
-
-    Text {
-      width: track.width
-      height: track.height
-      horizontalAlignment: Text.AlignHCenter
-      verticalAlignment: Text.AlignVCenter
-      text: Math.round(Battery.value * 100)
-      color: Battery.colors.fg
-      font.weight: 800
-      font.pointSize: 7.5
-    }
-    
-    Item {
-      anchors {
-        top: parent.top
-        bottom: parent.bottom
-        left: parent.left
-      }
-      width: parent.width * Battery.value
-      clip: true
-
-      Rectangle {
-        id: fill
-        width: track.width
-        height: track.height
-        radius: track.radius
-        color: Battery.colors.fg
-
-        Text {
-          id: batteryLabel
-          width: track.width
-          height: track.height
-          horizontalAlignment: Text.AlignHCenter
-          verticalAlignment: Text.AlignVCenter
-          text: Math.round(Battery.value * 100)
-          color: Battery.colors.bg
-          font.weight: 800
-          font.pointSize: 7.5
-          clip: true
-        }
-      }
+    id: batteryBorder
+    implicitWidth: Theme.size.battery.width
+    implicitHeight: Theme.size.battery.height
+    color: "transparent"
+    border.width: 2
+    radius: Theme.size.battery.radius
+    border.color: Theme.colors.fg3
+  
+    Rectangle {
+      id: batteryFill
+      anchors.fill: parent
+      anchors.margins: 4
+      color: "#ffffff"
+      radius: 2
     }
   }
   Rectangle {
     id: batteryNub
-    implicitWidth: Theme.size.batteryNubWidth
-    implicitHeight: Theme.size.batteryNubHeight
-    color: Battery.value < 0.99 ? track.color : fill.color
-    topRightRadius: 20
-    bottomRightRadius: 20
+    implicitWidth: 2
+    implicitHeight: 4
+    color: Theme.colors.fg3
+    topRightRadius: 10
+    bottomRightRadius: 10
     anchors.verticalCenter: parent.verticalCenter
   }
 }
