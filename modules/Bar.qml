@@ -29,6 +29,7 @@ Scope {
           Clock {}
           Workspaces {}
           Battery {}
+          KBLayout {}
         }
         // right
         Item { Layout.fillWidth: true }

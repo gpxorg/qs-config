@@ -13,11 +13,6 @@ Singleton {
     readonly property QtObject bar: QtObject{
        readonly property real height: 35
     }
-    readonly property QtObject battery: QtObject {
-      readonly property real width: 26
-      readonly property real height: 16
-      readonly property real radius: 6
-    }
   }
 
   colors: QtObject {

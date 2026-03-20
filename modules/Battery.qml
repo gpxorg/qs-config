@@ -5,23 +5,26 @@ import qs.misc
 
 Row {
   id: root
-  spacing: 1
+  spacing: 0
 
   Rectangle {
     id: batteryBorder
-    implicitWidth: Theme.size.battery.width
-    implicitHeight: Theme.size.battery.height
+    implicitWidth: 26
+    implicitHeight: 16
     color: "transparent"
     border.width: 2
-    radius: Theme.size.battery.radius
+    radius: 6
     border.color: Theme.colors.fg3
   
     Rectangle {
       id: batteryFill
-      anchors.fill: parent
-      anchors.margins: 4
-      color: "#ffffff"
-      radius: 2
+      anchors.top: parent.top
+      anchors.bottom: parent.bottom
+      anchors.left: parent.left
+      width: (parent.width - anchors.margins * 2) * Battery.value
+      anchors.margins: 3
+      color: Battery.colors.fg
+      radius: 3
     }
   }
   Rectangle {
