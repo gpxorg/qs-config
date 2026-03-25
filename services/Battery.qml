@@ -6,6 +6,8 @@ import Quickshell.Io
 import Quickshell.Services.UPower
 import Quickshell.Services.Notifications
 
+import qs.misc
+
 Singleton {
   id: root
   
@@ -24,15 +26,6 @@ Singleton {
   property bool criticalDischarging: isCritical && !charging
 
 
-  readonly property var colors: {
-    if (charging) 
-      return { fg:"#46D47D", bg: "#285B39" }
-    else if (isLow) 
-      return { fg: "#f05454", bg: "#4D2F2F" }
-    else 
-      return { fg: "#E6E6E6", bg: "#363636" }
-  }
-  
   onLowDischargingChanged: {
     if (!isLaptop || !lowDischarging) return;
     Quickshell.execDetached([

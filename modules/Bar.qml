@@ -6,22 +6,26 @@ import qs.misc
 Scope {
   Variants {
     model: Quickshell.screens
-    PanelWindow {
+  PanelWindow {
       required property var modelData
       screen: modelData
-      color: Theme.colors.bg3
+      color: Colors.bgBase
       anchors {
         top: true
         left: true
         right: true
       }
-      implicitHeight: Theme.size.bar.height
+      implicitHeight: Appearance.size.barHeight
 
       RowLayout {
         anchors.fill: parent
 
         // left
-        Item { Layout.fillWidth: true }
+        RowLayout {
+          spacing: 8
+
+          Workspaces {}
+        }
 
         // middle
         RowLayout {

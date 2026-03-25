@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Hyprland
+import qs.misc
 
 Item {
     id: root
@@ -11,10 +12,8 @@ Item {
     Connections {
         target: Hyprland
         function onRawEvent(event) {
-            console.log("event fired: " + event.name)
             if (event.name === "activelayout") {
                 root.layout = event.data.split(",")[1]
-                console.log("layout set to: " + root.layout)
             }
         }
     }
@@ -22,6 +21,6 @@ Item {
         id: kblayout
         text: root.layout.slice(0,2).toLowerCase()
         font.weight: 600
-        color: "#ffffff"
+        color: Colors.fgBase
     }
 }

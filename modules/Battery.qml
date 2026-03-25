@@ -9,12 +9,12 @@ Row {
 
   Rectangle {
     id: batteryBorder
-    implicitWidth: 26
-    implicitHeight: 16
+    implicitWidth: 24
+    implicitHeight: 14
     color: "transparent"
-    border.width: 2
-    radius: 6
-    border.color: Theme.colors.fg3
+    border.width: 1
+    radius: 5
+    border.color: Colors.fgSubtle
   
     Rectangle {
       id: batteryFill
@@ -22,18 +22,18 @@ Row {
       anchors.bottom: parent.bottom
       anchors.left: parent.left
       width: (parent.width - anchors.margins * 2) * Battery.value
-      anchors.margins: 3
-      color: Battery.colors.fg
-      radius: 3
+      anchors.margins: 2
+      color: (Battery.charging || Battery.charged) ? Colors.green : (Battery.isLow ? Colors.orange : Colors.fgBase)
+      radius: batteryBorder.radius / 1.5
     }
   }
   Rectangle {
     id: batteryNub
-    implicitWidth: 2
+    implicitWidth: 1.8
     implicitHeight: 4
-    color: Theme.colors.fg3
-    topRightRadius: 10
-    bottomRightRadius: 10
+    color: batteryBorder.border.color
+    topRightRadius: 2
+    bottomRightRadius: 2
     anchors.verticalCenter: parent.verticalCenter
   }
 }

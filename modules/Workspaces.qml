@@ -14,8 +14,8 @@ WrapperMouseArea {
   }
 
   Text {
-    text: "Workspace " + Hyprland.focusedWorkspace.id
-    color: Theme.colors.primary1
+    text: "workspace " + Hyprland.focusedWorkspace.id
+    color: Colors.accent
     font.weight: 800
   }
 }
