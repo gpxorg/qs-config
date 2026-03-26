@@ -11,7 +11,7 @@ Singleton {
   property QtObject size
 
   size: QtObject {
-    readonly property int barHeight: 36
+    readonly property int barHeight: 34
   }
 
 

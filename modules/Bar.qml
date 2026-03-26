@@ -18,7 +18,7 @@ Scope {
       implicitHeight: Appearance.size.barHeight
 
       GridLayout {
-        rows: 1
+        rows: 2
         columns: 3
         uniformCellWidths: true
 
@@ -49,6 +49,15 @@ Scope {
           Battery {}
           Clock {}
         }
+      }
+      Rectangle {
+        anchors {
+          bottom: parent.bottom
+          left: parent.left
+          right: parent.right
+        }
+        height: 1
+        color: Colors.bgSubtle
       }
     }
   }
