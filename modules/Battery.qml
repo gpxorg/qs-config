@@ -29,7 +29,7 @@ Row {
   }
   Rectangle {
     id: batteryNub
-    implicitWidth: 1.8
+    implicitWidth: 2
     implicitHeight: 4
     color: batteryBorder.border.color
     topRightRadius: 2

@@ -17,26 +17,38 @@ Scope {
       }
       implicitHeight: Appearance.size.barHeight
 
-      RowLayout {
-        anchors.fill: parent
+      GridLayout {
+        rows: 1
+        columns: 3
+        uniformCellWidths: true
 
+        anchors.fill: parent
+        anchors.leftMargin: 16
+        anchors.rightMargin: 16
+        
         // left
         RowLayout {
-          spacing: 8
+          spacing: 10
+          Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
 
           Workspaces {}
         }
 
         // middle
         RowLayout {
-          spacing: 8
-          Clock {}
-          Workspaces {}
-          Battery {}
-          KBLayout {}
+          spacing: 10
+          Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
+
         // right
-        Item { Layout.fillWidth: true }
+        RowLayout {
+          spacing: 10
+          Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+
+          KBLayout {}
+          Battery {}
+          Clock {}
+        }
       }
     }
   }
