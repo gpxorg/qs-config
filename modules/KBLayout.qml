@@ -19,8 +19,10 @@ Item {
     }
     Text {
         id: kblayout
-        text: root.layout.slice(0,2).toLowerCase()
-        font.weight: 600
+        text: root.layout.slice(0,2)
+        font.family: Appearance.font.family
+        font.pointSize: Appearance.font.xsmall
+        font.weight: Appearance.font.bold
         color: Colors.fgBase
     }
 }

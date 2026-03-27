@@ -16,6 +16,8 @@ WrapperMouseArea {
   Text {
     text: "workspace " + Hyprland.focusedWorkspace.id
     color: Colors.accent
-    font.weight: 800
+    font.family: Appearance.font.family
+    font.weight: Appearance.font.bold
+    font.pointSize: Appearance.font.xsmall
   }
 }
