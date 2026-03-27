@@ -4,24 +4,20 @@ import Quickshell
 import QtQuick
 
 Singleton {
-  id: root
+  readonly property string bgBase: "#f7f7f7"
+  readonly property string bgSubtle: "#E2EEEE"
+  readonly property string bgDimmed: "#e7e7e7"
 
-  property string bgBase: "#FFFFFF"
-  property string bgSubtle: "#A8A8A8"
-  property string bgDimmed: "#EEEEEE"
+  readonly property string fgBase: "#000000"
+  readonly property string fgSubtle: "#696969"
 
-  property string fgBase: "#262626"
-  property string fgSubtle: "#767676"
+  readonly property string accent: "#BC7500"
 
-  property string accent: "#AF5FD7"
+  readonly property string red: "#d13e23"
+  readonly property string green: "#448c27"
+  readonly property string blue: "#007acc"
 
-  property string red: "#c30771"
-  property string green: "#10a778"
-  property string blue: "#008EC4"
-
-  property string cyan: "#20a5ba"
-  property string yellow: "#A89C14"
-  property string pink: "#FB007A"
-  property string orange: "#D75F5F"
-
+  readonly property string cyan: "#0083b2"
+  readonly property string pink: "#7a3e9d"
+  readonly property string orange: "#ec8013"
 }
