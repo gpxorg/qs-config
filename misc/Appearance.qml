@@ -8,26 +8,29 @@ Singleton {
   
   property string theme: "dark"
 
-  property QtObject size
-  property QtObject font
+  readonly property QtObject size: QtObject {
 
-  size: QtObject {
-    readonly property int barHeight: 34
+    readonly property QtObject bar: QtObject {
+      property int height: 34
+      property int textSize: root.font.small
+      property int textWeight: root.font.extraBold
+    }
+
   }
 
-  font: QtObject {
-    readonly property string family: "Nimbus Sans"
+  readonly property QtObject font: QtObject {
+    readonly property string family: "M PLUS 1p"
 
     readonly property int thin: 200
     readonly property int regular: 400
     readonly property int bold: 700
     readonly property int extraBold: 900
 
-    readonly property int xsmall: 9
+    readonly property int extraSmall: 9
     readonly property int small: 10
-    readonly property int medium: 12
+    readonly property int medium: 11
     readonly property int large: 14
-    readonly property int xlarge: 18
+    readonly property int extraLarge: 18
     
   }
 

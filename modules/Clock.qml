@@ -6,6 +6,6 @@ Text {
   text: Clock.time
   color: Colors.fgBase
   font.family: Appearance.font.family
-  font.weight: Appearance.font.bold
-  font.pointSize: Appearance.font.xsmall
+  font.weight: Appearance.size.bar.textWeight
+  font.pointSize: Appearance.size.bar.textSize
 }

@@ -15,7 +15,7 @@ Scope {
         left: true
         right: true
       }
-      implicitHeight: Appearance.size.barHeight
+      implicitHeight: Appearance.size.bar.height
 
       GridLayout {
         rows: 2
