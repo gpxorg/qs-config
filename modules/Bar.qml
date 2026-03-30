@@ -18,18 +18,19 @@ Scope {
       implicitHeight: Appearance.size.bar.height
 
       GridLayout {
-        rows: 2
+        rows: 1
         columns: 3
         uniformCellWidths: true
+        height: Appearance.size.bar.height
 
         anchors.fill: parent
-        anchors.leftMargin: 16
-        anchors.rightMargin: 16
+        anchors.leftMargin: Appearance.size.bar.sideMargins
+        anchors.rightMargin: Appearance.size.bar.sideMargins
         
         // left
         RowLayout {
           spacing: 10
-          Layout.alignment: Qt.AlignLeft | Qt.AlignHCenter
+          Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
 
           Workspaces {}
         }
@@ -38,6 +39,7 @@ Scope {
         RowLayout {
           spacing: 10
           Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+
         }
 
         // right
@@ -56,7 +58,7 @@ Scope {
           left: parent.left
           right: parent.right
         }
-        height: 1
+        height: Appearance.size.bar.borderHeight
         color: Colors.bgSubtle
       }
     }
