@@ -16,7 +16,7 @@ Singleton {
       property int height: 35
       property int borderHeight: 2
       property int sideMargins: 16
-      property int textSize: root.font.small
+      property int textSize: root.font.extraSmall
       property int textWeight: root.font.bold
     }
   }

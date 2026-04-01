@@ -28,7 +28,6 @@ Singleton {
     readonly property string blue: currentTheme.blue
 
     readonly property string cyan: currentTheme.cyan
-    readonly property string yellow: currentTheme.yellow
     readonly property string pink: currentTheme.pink
     readonly property string orange: currentTheme.orange
 

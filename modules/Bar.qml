@@ -32,7 +32,9 @@ Scope {
           spacing: 10
           Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
 
-          Workspaces {}
+          WidgetWrapper {
+            Workspaces {}
+          }
         }
 
         // middle
@@ -47,19 +49,14 @@ Scope {
           spacing: 10
           Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
-          KBLayout {}
-          Battery {}
-          Clock {}
+          WidgetWrapper {
+            KBLayout {}
+          }
+          WidgetWrapper {
+            Battery {}
+            Clock {}
+          }
         }
-      }
-      Rectangle {
-        anchors {
-          bottom: parent.bottom
-          left: parent.left
-          right: parent.right
-        }
-        height: Appearance.size.bar.borderHeight
-        color: Colors.bgSubtle
       }
     }
   }

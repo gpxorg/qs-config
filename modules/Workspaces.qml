@@ -32,11 +32,10 @@ Item {
           property int index: modelData + 1
           property var currentWs: Workspaces.getWorkspace(index)
 
-          Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-          Layout.preferredHeight: 25
-          Layout.preferredWidth: 25
-          radius: 9
-          color:currentWs ? currentWs.active ? Qt.alpha(Colors.accent, 0.2) : Colors.bgBase : Colors.bgBase
+          implicitHeight: 21
+          implicitWidth: 22
+          radius: 20
+          color:currentWs ? currentWs.active ? Qt.alpha(Colors.accent, 0.2) : Colors.bgSubtle : Colors.bgSubtle
           
           Text {
             text: index 
@@ -44,7 +43,7 @@ Item {
             color: currentWs ? currentWs.active ? Qt.alpha(Colors.accent, 1) : Colors.fgBase : Colors.fgSubtle
             font.family: Appearance.font.family
             font.weight: Appearance.size.bar.textWeight
-            font.pointSize: Appearance.size.bar.textSize
+            font.pointSize: Appearance.font.small
           }
         }
       }

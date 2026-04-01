@@ -9,7 +9,7 @@ Row {
 
   Rectangle {
     id: batteryBorder
-    implicitWidth: 24
+    implicitWidth: 23
     implicitHeight: 14
     color: "transparent"
     border.width: 1
@@ -29,7 +29,7 @@ Row {
   }
   Rectangle {
     id: batteryNub
-    implicitWidth: 2
+    implicitWidth: 1
     implicitHeight: 4
     color: batteryBorder.border.color
     topRightRadius: 2
