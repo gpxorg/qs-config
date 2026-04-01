@@ -34,8 +34,8 @@ Item {
 
           implicitHeight: 21
           implicitWidth: 22
-          radius: 20
-          color:currentWs ? currentWs.active ? Qt.alpha(Colors.accent, 0.2) : Colors.bgSubtle : Colors.bgSubtle
+          radius: 8
+          color:currentWs ? currentWs.active ? Qt.alpha(Colors.accent, 0.2) : Colors.bgBase : Colors.bgBase
           
           Text {
             text: index 
