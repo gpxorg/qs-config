@@ -6,7 +6,7 @@ import Quickshell.Io
 import Quickshell.Services.UPower
 import Quickshell.Services.Notifications
 
-import qs.misc
+import qs.config
 
 Singleton {
   id: root

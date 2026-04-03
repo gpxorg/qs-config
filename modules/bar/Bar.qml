@@ -1,7 +1,7 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
-import qs.misc
+import qs.config
 
 Scope {
   Variants {
@@ -32,9 +32,7 @@ Scope {
           spacing: 10
           Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
 
-          WidgetWrapper {
-            Workspaces {}
-          }
+          Workspaces {}
         }
 
         // middle
@@ -49,13 +47,9 @@ Scope {
           spacing: 10
           Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
-          WidgetWrapper {
-            KBLayout {}
-          }
-          WidgetWrapper {
-            Battery {}
-            Clock {}
-          }
+          KBLayout {}
+          Battery {}
+          Clock {}
         }
       }
     }

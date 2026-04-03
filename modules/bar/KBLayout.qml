@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Hyprland
-import qs.misc
+import qs.config
 
 Item {
     id: root
@@ -21,8 +21,8 @@ Item {
         id: kblayout
         text: root.layout.slice(0,2).toLowerCase()
         font.family: Appearance.font.family
-        font.pointSize: Appearance.size.bar.textSize
-        font.weight: Appearance.size.bar.textWeight
+        font.pointSize: Appearance.size.bar.fontSize
+        font.weight: Appearance.size.bar.fontWeight
         color: Colors.fgBase
     }
 }

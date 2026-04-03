@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 import qs.services
-import qs.misc
+import qs.config
 
 Row {
   id: root

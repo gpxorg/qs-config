@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
-import qs.misc
+import qs.config
 
 Rectangle {
   id: root
@@ -13,11 +13,11 @@ Rectangle {
   implicitHeight: Appearance.size.bar.height - 8
   implicitWidth: innerLayout.implicitWidth + padding * 2
 
-  color: Colors.bgBase
+  color: "transparent" 
   radius: 9
   border {
     width: 1
-    color: Colors.fgSubtle
+    color: "transparent"
   }
 
   RowLayout {

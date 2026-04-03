@@ -9,19 +9,19 @@ Singleton {
   // Used to change the colorscheme theme, use values "dark" or "light". Defaults to dark if incorrect name is given.
   property string theme: "dark"
 
-  // sizes for several components
-  readonly property QtObject size: QtObject {
-    // sizes for bar items
-    readonly property QtObject bar: QtObject {
-      property int height: 35
-      property int borderHeight: 2
+  property QtObject size
+  property QtObject font
+
+  size: QtObject {
+    property QtObject bar: QtObject {
+      property int height: 40
       property int sideMargins: 16
-      property int textSize: root.font.extraSmall
-      property int textWeight: root.font.bold
+      property int fontSize: root.font.extraSmall
+      property int fontWeight: root.font.bold
     }
   }
 
-  readonly property QtObject font: QtObject {
+  font: QtObject {
     readonly property string family: "M PLUS 1p"
 
     readonly property int thin: 200
