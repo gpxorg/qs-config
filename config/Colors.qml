@@ -8,28 +8,46 @@ Singleton {
   id: root
 
   property var currentTheme: {
-    switch(Appearance.theme) {
-      case "dark": return DarkColors
-      case "light": return LightColors
-      default: return DarkColors
-    }
+    var theme = Appearance.theme
+    var tone = Appearance.themeTone
+    if (theme === "dark" && tone === "static") return DarkStaticColors
+    if (theme === "dark" && tone === "dynamic") return DarkDynamicColors
+    if (theme === "light" && tone === "static") return LightStaticColors
+    if (theme === "light" && tone === "dynamic") return LightDynamicColors
+    return DarkStaticColors
   }
-    readonly property string bgBase: currentTheme.bgBase
-    readonly property string bgSubtle: currentTheme.bgSubtle
-    readonly property string bgDimmed: currentTheme.bgDimmed
 
-    readonly property string fgBase: currentTheme.fgBase
-    readonly property string fgSubtle: currentTheme.fgSubtle
+    readonly property string surface: currentTheme.surface.a10
+    readonly property string surfaceBorder: currentTheme.surface.a40
+    readonly property string surfaceBackground: currentTheme.surface.a20
 
-    readonly property string accent: currentTheme.accent
+    readonly property string surfaceText: currentTheme.text.a10
+    readonly property string surfaceTextBackground: currentTheme.text.a20
+    readonly property string surfaceTextUnavailable: currentTheme.surface.a50
 
-    readonly property string red: currentTheme.red
-    readonly property string green: currentTheme.green
-    readonly property string blue: currentTheme.blue
+    readonly property string primary: currentTheme.primary.a10
+    readonly property string primaryBorder: currentTheme.primary.a20
+    readonly property string primaryBackground: currentTheme.primary.a50
+    readonly property string primaryIcon: currentTheme.primary.a40
+    readonly property string primaryTransparent: Qt.alpha(currentTheme.primary.a30, 0.2)
 
-    readonly property string cyan: currentTheme.cyan
-    readonly property string pink: currentTheme.pink
-    readonly property string orange: currentTheme.orange
+    // semantic colors
+    readonly property string success: currentTheme.success.a10
+    readonly property string successText: currentTheme.success.a20
+    readonly property string successBackground: currentTheme.success.a30
+
+    readonly property string danger: currentTheme.danger.a10
+    readonly property string dangerText: currentTheme.danger.a20
+    readonly property string dangerBackground: currentTheme.danger.a30
+
+    readonly property string warning: currentTheme.warning.a10
+    readonly property string warningText: currentTheme.warning.a20
+    readonly property string warningBackground: currentTheme.warning.a30
+
+    readonly property string info: currentTheme.info.a10
+    readonly property string infoText: currentTheme.info.a20
+    readonly property string infoBackground: currentTheme.info.a30
+
 
 
 }

@@ -4,7 +4,7 @@ import qs.config
 
 Text {
   text: Clock.time
-  color: Colors.fgBase
+  color: Colors.surfaceText
   font.family: Appearance.font.family
   font.weight: Appearance.size.bar.fontWeight
   font.pointSize: Appearance.size.bar.fontSize

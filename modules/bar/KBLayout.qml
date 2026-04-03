@@ -23,6 +23,6 @@ Item {
         font.family: Appearance.font.family
         font.pointSize: Appearance.size.bar.fontSize
         font.weight: Appearance.size.bar.fontWeight
-        color: Colors.fgBase
+        color: Colors.surfaceText
     }
 }

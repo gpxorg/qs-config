@@ -6,8 +6,8 @@ import QtQuick
 Singleton {
   id: root
 
-  // Used to change the colorscheme theme, use values "dark" or "light". Defaults to dark if incorrect name is given.
-  property string theme: "dark"
+  property string theme: "dark" // "dark" or "light". Default is "dark"
+  property string themeTone: "static" // "dynamic" or "static". Default is "static"
 
   property QtObject size
   property QtObject font

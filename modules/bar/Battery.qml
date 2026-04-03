@@ -14,7 +14,7 @@ Row {
     color: "transparent"
     border.width: 1
     radius: 5
-    border.color: Colors.fgSubtle
+    border.color: Colors.surfaceBorder
   
     Rectangle {
       id: batteryFill
@@ -23,7 +23,7 @@ Row {
       anchors.left: parent.left
       width: (parent.width - anchors.margins * 2) * Battery.value
       anchors.margins: 2
-      color: (Battery.charging || Battery.charged) ? Colors.green : (Battery.isLow ? Colors.orange : Colors.fgBase)
+      color: (Battery.charging || Battery.charged) ? Colors.successText : (Battery.isLow ? Colors.dangerText : Colors.surfaceText)
       radius: batteryBorder.radius / 1.5
     }
   }

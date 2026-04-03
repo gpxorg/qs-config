@@ -14,9 +14,9 @@ Item {
     id: pillRect
     anchors.verticalCenter: parent.verticalCenter
     anchors.horizontalCenter: parent.horizontalCenter
-    radius: 12
-    color: Colors.bgSubtle
-    implicitWidth: wsLayout.implicitWidth + 14
+    radius: 11
+    color: Colors.surfaceBackground
+    implicitWidth: wsLayout.implicitWidth + 13
     implicitHeight: wsLayout.implicitHeight + 8
     z: 1
 
@@ -25,11 +25,8 @@ Item {
       width: 20
       height: 20
       radius: 8
-      border {
-        width: 1
-        color: Colors.accent
-      }
-      color: Qt.alpha(Colors.accent, 0.2)
+    
+      color: Colors.primaryBorder
       anchors.verticalCenter: parent.verticalCenter
 
       property int activeIndex: {
@@ -74,7 +71,7 @@ Item {
           Text {
             text: index
             anchors.centerIn: parent
-            color: currentWs ? currentWs.active ? Qt.alpha(Colors.accent, 1) : Colors.fgBase : Colors.fgSubtle
+            color: currentWs ? currentWs.active ? Colors.surface : Colors.primaryIcon : Colors.surfaceTextUnavailable
             font.family: Appearance.font.family
             font.weight: Appearance.size.bar.fontWeight
             font.pointSize: Appearance.font.extraSmall

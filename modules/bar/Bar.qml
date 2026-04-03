@@ -9,7 +9,7 @@ Scope {
   PanelWindow {
       required property var modelData
       screen: modelData
-      color: Colors.bgBase
+      color: Colors.surface
       anchors {
         top: true
         left: true
