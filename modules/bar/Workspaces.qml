@@ -14,17 +14,21 @@ Item {
     id: pillRect
     anchors.verticalCenter: parent.verticalCenter
     anchors.horizontalCenter: parent.horizontalCenter
-    radius: 8
+    radius: 12
     color: Colors.bgSubtle
-    implicitWidth: wsLayout.implicitWidth + 10
-    implicitHeight: wsLayout.implicitHeight + 5
+    implicitWidth: wsLayout.implicitWidth + 14
+    implicitHeight: wsLayout.implicitHeight + 8
     z: 1
 
     Rectangle {
       id: highlight
       width: 20
       height: 20
-      radius: 6
+      radius: 8
+      border {
+        width: 1
+        color: Colors.accent
+      }
       color: Qt.alpha(Colors.accent, 0.2)
       anchors.verticalCenter: parent.verticalCenter
 
@@ -73,7 +77,7 @@ Item {
             color: currentWs ? currentWs.active ? Qt.alpha(Colors.accent, 1) : Colors.fgBase : Colors.fgSubtle
             font.family: Appearance.font.family
             font.weight: Appearance.size.bar.fontWeight
-            font.pointSize: Appearance.font.small
+            font.pointSize: Appearance.font.extraSmall
 
             Behavior on color {
               ColorAnimation { duration: 150 }
