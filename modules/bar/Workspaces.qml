@@ -33,7 +33,7 @@ Item {
       anchors.verticalCenter: parent.verticalCenter
 
       property int activeIndex: {
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 9; i++) {
           var ws = Workspaces.getWorkspace(i + 1)
           if (ws && ws.active) return i
         }
@@ -44,7 +44,7 @@ Item {
 
       Behavior on x {
         SmoothedAnimation {
-          velocity: 600
+          velocity: 800
         }
       }
     }
@@ -55,7 +55,7 @@ Item {
       spacing: 5
 
       Repeater {
-        model: 5
+        model: 9
         Rectangle {
           property int index: modelData + 1
           property var currentWs: Workspaces.getWorkspace(index)
