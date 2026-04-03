@@ -93,10 +93,11 @@ Item {
     z: 0
     cursorShape: Qt.SplitVCursor
     onWheel: (wheel) => {
+      var current = highlight.activeIndex + 1 
       if (wheel.angleDelta.y > 0) {
-        Hyprland.dispatch("workspace e-1")
+        if (current > 1) Hyprland.dispatch("workspace " + (current - 1))
       } else {
-        Hyprland.dispatch("workspace e+1")
+        if (current < 9) Hyprland.dispatch("workspace " + (current + 1))
       }
     }
   }
