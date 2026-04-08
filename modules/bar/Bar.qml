@@ -33,6 +33,7 @@ Scope {
           Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
 
           Workspaces {}
+          ActiveClient {}
         }
 
         // middle

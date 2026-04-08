@@ -8,7 +8,7 @@ import qs.services
 Item {
   id: root
   implicitWidth: pillRect.implicitWidth
-  implicitHeight: Appearance.size.bar.height
+  implicitHeight: pillRect.implicitHeight
 
   Rectangle {
     id: pillRect
@@ -71,7 +71,7 @@ Item {
           Text {
             text: index
             anchors.centerIn: parent
-            color: currentWs ? currentWs.active ? Colors.surface : Colors.primaryIcon : Colors.surfaceTextUnavailable
+            color: currentWs ? currentWs.active ? Colors.surface : Colors.primary : Colors.surfaceTextUnavailable
             font.family: Appearance.font.family
             font.weight: Appearance.size.bar.fontWeight
             font.pointSize: Appearance.font.extraSmall

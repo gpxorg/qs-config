@@ -5,23 +5,22 @@ import QtQuick
 
 Singleton {
 
-
   readonly property var primary: QtObject {
-    property string a10: "#da8346"
-    property string a20: "#e0915a"
-    property string a30: "#e69e6e"
-    property string a40: "#ebac82"
-    property string a50: "#f0b996"
-    property string a60: "#f4c7aa"
+    property string a10: "#75a57b"
+    property string a20: "#84af89"
+    property string a30: "#93b997"
+    property string a40: "#a2c3a5"
+    property string a50: "#b2cdb4"
+    property string a60: "#c1d7c2"
   }
 
   readonly property var surface: QtObject {
-    property string a10: "#1a120c"
-    property string a20: "#2f2824"
-    property string a30: "#453f3b"
-    property string a40: "#5d5754"
-    property string a50: "#76716e"
-    property string a60: "#908b89"
+    property string a10: "#1b1f1c"
+    property string a20: "#303431"
+    property string a30: "#464a47"
+    property string a40: "#5e615f"
+    property string a50: "#777977"
+    property string a60: "#909391"
   }
 
   readonly property var success: QtObject {
@@ -48,8 +47,4 @@ Singleton {
     property string a30: "#92b2e5"
   }
 
-  readonly property var text: QtObject {
-    property string a10: "#ffffff"
-    property string a20: "#000000"
-  }
 }

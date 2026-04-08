@@ -1,96 +1,102 @@
+// InvertedCorners.qml
+import Quickshell.Wayland
+import Quickshell
 import QtQuick
-import QtQuick.Controls
 
-Item {
-    id: cornerShape
-    width: 48
-    height: 48
+ShellRoot {
+    Variants {
+        model: Quickshell.screens
 
-    property string color: "black"
-    property int radius: 16
-    property int orientation: 1 // 0=TOP_LEFT, 1=TOP_RIGHT, 2=BOTTOM_LEFT, 3=BOTTOM_RIGHT
-    property bool invertH: false
-    property bool invertV: false
+        PanelWindow {
+            required property var modelData
+            screen: modelData
 
-    Canvas {
-        anchors.fill: parent
-
-        onPaint: {
-            const ctx = getContext("2d");
-            const w = width;
-            const h = height;
-            const r = Math.max(0, Math.min(radius, Math.min(w, h)));
-            const k = 0.55228475;
-
-            ctx.reset();
-            ctx.save();
-
-            ctx.translate(invertH ? w : 0, invertV ? h : 0);
-            ctx.scale(invertH ? -1 : 1, invertV ? -1 : 1);
-
-            // draw full rect
-            ctx.beginPath();
-            ctx.rect(0, 0, w, h);
-            ctx.closePath();
-
-            // draw quarter-circle as negative cutout
-            ctx.beginPath();
-
-            switch (orientation) {
-            case 0: // TOP_LEFT
-                ctx.moveTo(0, r);
-                ctx.lineTo(0, 0);
-                ctx.lineTo(r, 0);
-                ctx.bezierCurveTo(
-                    r * (1 - k), 0,
-                    0, r * (1 - k),
-                    0, r
-                );
-                break;
-            case 1: // TOP_RIGHT
-                ctx.moveTo(w - r, 0);
-                ctx.lineTo(w, 0);
-                ctx.lineTo(w, r);
-                ctx.bezierCurveTo(
-                    w, r * (1 - k),
-                    w - r * (1 - k), 0,
-                    w - r, 0
-                );
-                break;
-            case 2: // BOTTOM_LEFT
-                ctx.moveTo(0, h - r);
-                ctx.lineTo(0, h);
-                ctx.lineTo(r, h);
-                ctx.bezierCurveTo(
-                    r * (1 - k), h,
-                    0, h - r * (1 - k),
-                    0, h - r
-                );
-                break;
-            case 3: // BOTTOM_RIGHT
-                ctx.moveTo(w - r, h);
-                ctx.lineTo(w, h);
-                ctx.lineTo(w, h - r);
-                ctx.bezierCurveTo(
-                    w, h - r * (1 - k),
-                    w - r * (1 - k), h,
-                    w - r, h
-                );
-                break;
+            anchors {
+                top: true
+                left: true
+                right: true
+                bottom: true
             }
 
-            ctx.closePath();
-            ctx.clip("evenodd"); // <-- subtracts the corner curve from the rectangle
+            WlrLayershell.layer: WlrLayer.Overlay
+            WlrLayershell.keyboardFocus: WlrKeyboardFocus.None
+            color: "transparent"
+            exclusiveZone: -1
+            mask: Region {}
 
-            // fill remaining shape
-            ctx.fillStyle = color;
-            ctx.fillRect(0, 0, w, h);
+            readonly property color cornerColor: "#000000"
+            readonly property int radius: 20
 
-            ctx.restore();
+
+            // Top-left
+            Canvas {
+                width: radius; height: radius
+                anchors { top: parent.top; left: parent.left }
+                onPaint: {
+                    var ctx = getContext("2d")
+                    ctx.clearRect(0, 0, width, height)
+                    ctx.fillStyle = cornerColor
+                    ctx.beginPath()
+                    ctx.moveTo(0, 0)
+                    ctx.lineTo(width, 0)
+                    ctx.arcTo(0, 0, 0, height, width)
+                    ctx.lineTo(0, height)
+                    ctx.closePath()
+                    ctx.fill()
+                }
+            }
+
+            // Bottom-left
+            Canvas {
+                width: radius; height: radius
+                anchors { bottom: parent.bottom; left: parent.left }
+                onPaint: {
+                    var ctx = getContext("2d")
+                    ctx.clearRect(0, 0, width, height)
+                    ctx.fillStyle = cornerColor
+                    ctx.beginPath()
+                    ctx.moveTo(0, height)
+                    ctx.lineTo(width, height)
+                    ctx.arcTo(0, height, 0, 0, width)
+                    ctx.lineTo(0, 0)
+                    ctx.closePath()
+                    ctx.fill()
+                }
+            }
+
+            // Top-right
+            Canvas {
+                width: radius; height: radius
+                anchors { top: parent.top; right: parent.right }
+                onPaint: {
+                    var ctx = getContext("2d")
+                    ctx.clearRect(0, 0, width, height)
+                    ctx.fillStyle = cornerColor
+                    ctx.beginPath()
+                    ctx.moveTo(width, 0)
+                    ctx.lineTo(0, 0)
+                    ctx.arcTo(width, 0, width, height, width)
+                    ctx.lineTo(width, 0)
+                    ctx.fill()
+                }
+            }
+
+            // Bottom-right
+            Canvas {
+                width: radius; height: radius
+                anchors { bottom: parent.bottom; right: parent.right }
+                onPaint: {
+                    var ctx = getContext("2d")
+                    ctx.clearRect(0, 0, width, height)
+                    ctx.fillStyle = cornerColor
+                    ctx.beginPath()
+                    ctx.moveTo(width, height)
+                    ctx.lineTo(0, height)
+                    ctx.arcTo(width, height, width, 0, width)
+                    ctx.lineTo(width, height)
+                    ctx.fill()
+                }
+            }
         }
-
-        onWidthChanged: requestPaint()
-        onHeightChanged: requestPaint()
-        Component.onCompleted: requestPaint()
     }
 }

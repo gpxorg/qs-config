@@ -6,21 +6,21 @@ import QtQuick
 Singleton {
 
   readonly property var primary: QtObject {
-    property string a10: "#b76354"
-    property string a20: "#a1584b"
-    property string a30: "#8c4d42"
-    property string a40: "#774239"
-    property string a50: "#623830"
-    property string a60: "#4f2e28"
+    property string a10: "#568e3f"
+    property string a20: "#4d7d39"
+    property string a30: "#446d32"
+    property string a40: "#3b5d2c"
+    property string a50: "#324d26"
+    property string a60: "#293e20"
   }
 
   readonly property var surface: QtObject {
-    property string a10: "#f9efed"
-    property string a20: "#ebe2e0"
-    property string a30: "#ddd5d4"
-    property string a40: "#cfc9c7"
-    property string a50: "#c1bcbb"
-    property string a60: "#b4b0af"
+    property string a10: "#ebefe6"
+    property string a20: "#dfe2da"
+    property string a30: "#d2d5ce"
+    property string a40: "#c6c9c3"
+    property string a50: "#babcb7"
+    property string a60: "#aeb0ac"
   }
 
   readonly property var success: QtObject {
@@ -52,4 +52,6 @@ Singleton {
     property string a20: "#ffffff"
   }
 }
+
+
 

@@ -21,15 +21,12 @@ Singleton {
     readonly property string surfaceBorder: currentTheme.surface.a40
     readonly property string surfaceBackground: currentTheme.surface.a20
 
-    readonly property string surfaceText: currentTheme.text.a10
-    readonly property string surfaceTextBackground: currentTheme.text.a20
+    readonly property string surfaceText: currentTheme.surface.a60
     readonly property string surfaceTextUnavailable: currentTheme.surface.a50
 
     readonly property string primary: currentTheme.primary.a10
-    readonly property string primaryBorder: currentTheme.primary.a20
-    readonly property string primaryBackground: currentTheme.primary.a50
-    readonly property string primaryIcon: currentTheme.primary.a40
-    readonly property string primaryTransparent: Qt.alpha(currentTheme.primary.a30, 0.2)
+    readonly property string primaryBorder: currentTheme.primary.a40
+    readonly property string primaryBackground: currentTheme.primary.a20
 
     // semantic colors
     readonly property string success: currentTheme.success.a10
