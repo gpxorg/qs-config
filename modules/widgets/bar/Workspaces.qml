@@ -4,6 +4,7 @@ import Quickshell.Hyprland
 import Quickshell.Widgets
 import qs.config
 import qs.services
+import qs.modules.components
 
 Item {
   id: root
@@ -68,13 +69,10 @@ Item {
             onClicked: Hyprland.dispatch("workspace " + index)
           }
 
-          Text {
+          BuddyText {
             text: index
             anchors.centerIn: parent
             color: currentWs ? currentWs.active ? Colors.surface : Colors.primary : Colors.surfaceTextUnavailable
-            font.family: Appearance.font.family
-            font.weight: Appearance.size.bar.fontWeight
-            font.pointSize: Appearance.font.extraSmall
 
             Behavior on color {
               ColorAnimation { duration: 150 }

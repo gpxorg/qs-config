@@ -15,17 +15,17 @@ Scope {
         left: true
         right: true
       }
-      implicitHeight: Appearance.size.bar.height
+      implicitHeight: Appearance.size.barHeight
 
       GridLayout {
         rows: 1
         columns: 3
         uniformCellWidths: true
-        height: Appearance.size.bar.height
+        height: Appearance.size.barHeight
 
         anchors.fill: parent
-        anchors.leftMargin: Appearance.size.bar.sideMargins
-        anchors.rightMargin: Appearance.size.bar.sideMargins
+        anchors.leftMargin: Appearance.margins.large
+        anchors.rightMargin: Appearance.margins.large
         
         // left
         RowLayout {

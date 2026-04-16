@@ -1,5 +1,5 @@
-import qs.modules.bar
-import qs.modules.desktop
+import qs.modules.widgets.bar
+import qs.modules.widgets.desktop
 
 import Quickshell
 

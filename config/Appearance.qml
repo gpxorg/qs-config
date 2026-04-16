@@ -10,15 +10,27 @@ Singleton {
   property string themeTone: "static" // "dynamic" or "static". Default is "static"
 
   property QtObject size
+  property QtObject rounding
+  property QtObject margins
   property QtObject font
+  property QtObject icon
 
   size: QtObject {
-    property QtObject bar: QtObject {
-      property int height: 40
-      property int sideMargins: 16
-      property int fontSize: root.font.extraSmall
-      property int fontWeight: root.font.bold
-    }
+    property int barHeight: 40
+  }
+
+  rounding: QtObject {
+    property int light: 4
+    property int medium: 8
+    property int heavy: 10
+    property int extreme: 20
+    property int circle: 200
+  }
+
+  margins: QtObject {
+    property int small: 4
+    property int medium: 8
+    property int large: 16
   }
 
   font: QtObject {
@@ -29,12 +41,19 @@ Singleton {
     readonly property int bold: 700
     readonly property int extraBold: 900
 
-    readonly property int extraSmall: 9
-    readonly property int small: 10
-    readonly property int medium: 11
+    readonly property int extraSmall: 11
+    readonly property int small: 12
+    readonly property int medium: 13
     readonly property int large: 14
     readonly property int extraLarge: 18
-    
+  }
+
+  icon: QtObject {
+    readonly property string family: "Phosphor"
+
+    readonly property int small: 20
+    readonly property int medium: 30
+    readonly property int large: 40
   }
 
 
