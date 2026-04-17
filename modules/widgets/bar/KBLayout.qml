@@ -13,5 +13,6 @@ Item {
     BuddyText {
         id: kblayout
         text: KBLayout.layout.slice(0,2).toLowerCase()
+        weight: 3
     }
 }

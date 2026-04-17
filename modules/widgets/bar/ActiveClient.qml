@@ -12,29 +12,22 @@ Item {
   id: root
   implicitHeight: widget.implicitHeight
 
-
   RowLayout {
     id: widget
     spacing: 6
 
-    BuddyIcon {
-      text: "\ue32e"
-      color: Colors.surfaceText
-      font.family: Appearance.icon.family
-      font.pixelSize: Appearance.icon.small
+    BuddyIcon { 
+      icon: "monitor"
     }
-    BuddyText {
+    BuddyText { 
       text: ActiveClient.processCount
-      color: Colors.surfaceText
+      weight: 3
     }
-
-    BuddyText {
-      id: name
+    BuddyText { 
       text: ActiveClient.windowClass
-      color: Colors.surfaceText
+      weight: 3
     }
     BuddyText {
-      id: desc
       text: ActiveClient.windowTitle
       color: Colors.surfaceTextUnavailable
     }

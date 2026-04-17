@@ -34,12 +34,12 @@ Singleton {
   }
 
   font: QtObject {
-    readonly property string family: "M PLUS 1p"
+    readonly property string family: "IBM Plex Sans"
 
-    readonly property int thin: 200
+    readonly property int thin: 300
     readonly property int regular: 400
-    readonly property int bold: 700
-    readonly property int extraBold: 900
+    readonly property int bold: 600
+    readonly property int extraBold: 700
 
     readonly property int extraSmall: 11
     readonly property int small: 12

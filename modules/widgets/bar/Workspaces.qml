@@ -71,6 +71,7 @@ Item {
 
           BuddyText {
             text: index
+            weight: 3
             anchors.centerIn: parent
             color: currentWs ? currentWs.active ? Colors.surface : Colors.primary : Colors.surfaceTextUnavailable
 

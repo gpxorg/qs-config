@@ -11,5 +11,6 @@ Item {
   BuddyText {
     id: clock
     text: Clock.time
+    weight: 3
   }
 }
