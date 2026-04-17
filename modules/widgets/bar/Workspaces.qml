@@ -54,7 +54,7 @@ Item {
 
       Repeater {
         model: 9
-        Rectangle {
+        BuddyRect {
           property int index: modelData + 1
           property var currentWs: Workspaces.getWorkspace(index)
 

@@ -16,20 +16,23 @@ Item {
     id: widget
     spacing: 6
 
-    BuddyIcon { 
-      icon: "monitor"
-    }
-    BuddyText { 
-      text: ActiveClient.processCount
-      weight: 3
-    }
-    BuddyText { 
-      text: ActiveClient.windowClass
-      weight: 3
-    }
-    BuddyText {
-      text: ActiveClient.windowTitle
-      color: Colors.surfaceTextUnavailable
+    BuddyButton {
+      variant: "text"
+
+      BuddyIcon { 
+        icon: "monitor"
+      }
+      BuddyText { 
+        text: ActiveClient.processCount
+        weight: 3
+      }
+      BuddyText { 
+        text: ActiveClient.windowClass
+        weight: 3
+      }
+      BuddyText {
+        text: ActiveClient.windowTitle
+      }
     }
   }
 }
