@@ -1,6 +1,6 @@
 import QtQuick
 import qs.config
-import qs.modules.components
+import qs.components
 
 BuddyText {
     id: root

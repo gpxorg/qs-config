@@ -29,7 +29,7 @@ Scope {
         
         // left
         RowLayout {
-          spacing: 10
+          spacing: 6
           Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
 
           Workspaces {}
@@ -38,14 +38,14 @@ Scope {
 
         // middle
         RowLayout {
-          spacing: 10
+          spacing: 6
           Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
         }
 
         // right
         RowLayout {
-          spacing: 10
+          spacing: 6
           Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
           KBLayout {}

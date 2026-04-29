@@ -8,21 +8,34 @@ Singleton {
   id: root
   property string windowClass: "Desktop"
   property string windowTitle
-  property int processCount: 0
   readonly property int maxLength: 40
 
-  function countClients() {
-    const toplevels = Hyprland.toplevels.values
-    let count = 0
-    for (let i = 0; i < toplevels.length; i++) {
-    if (toplevels[i].workspace && toplevels[i].workspace.id === Hyprland.focusedWorkspace.id)
-          count++
-    }
-    processCount = count
-    Hyprland.refreshToplevels()
-    }
+  readonly property var categoryIcons: ({
+    WebBrowser: "global",
+    TerminalEmulator: "terminal",
+    FileManager: "folder",
+    Game: "game-controller",
+    Development: "code",
+    Settings: "gear",
+    HardwareSettings: "gear",
+    DesktopSettings: "gear",
+    ConsoleOnly: "terminal",
+    InstantMessaging: "chat",
+    Recorder: "video-camera",
+    Player: "monitor-play",
+    Utility: "wrench",
+    
 
+  })
 
+  readonly property string icon: {
+    const entry = DesktopEntries.heuristicLookup(windowClass.toLowerCase())
+    const categories = entry?.categories ?? []
+    for (const cat of categories) {
+      if (categoryIcons[cat]) return categoryIcons[cat]
+    }
+    return "desktop-tower"
+  }
 
   Connections {
     target: Hyprland
@@ -31,11 +44,10 @@ Singleton {
         const parts = event.parse(2)
         windowClass = (parts[0] === "") ? "Desktop" : (parts[0].charAt(0).toUpperCase() + parts[0].slice(1)) 
         windowTitle = (parts[1].length > maxLength) ? parts[1].slice(0, maxLength) + "..." : parts[1] //truncate string if its longer than maxLength
+        //const entry = DesktopEntries.heuristicLookup(parts[0])
+        //console.log(entry?.categories)
       }
-      if (event.name === "openwindow" || event.name === "closewindow") {
-        countClients()
-      }
+
     }
-    function onFocusedWorkspaceChanged() { countClients() }
   }
 }

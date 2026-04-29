@@ -4,7 +4,7 @@ import Quickshell.Hyprland
 import Quickshell.Widgets
 import qs.config
 import qs.services
-import qs.modules.components
+import qs.components
 
 Item {
   id: root

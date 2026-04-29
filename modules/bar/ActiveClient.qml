@@ -6,7 +6,7 @@ import QtQuick.Controls
 
 import qs.config
 import qs.services
-import qs.modules.components
+import qs.components
 
 Item {
   id: root
@@ -17,14 +17,11 @@ Item {
     spacing: 6
 
     BuddyButton {
-      variant: "text"
+      variant: "ghost"
 
       BuddyIcon { 
-        icon: "monitor"
-      }
-      BuddyText { 
-        text: ActiveClient.processCount
-        weight: 3
+        icon: ActiveClient.icon
+        variant: "Fill"
       }
       BuddyText { 
         text: ActiveClient.windowClass
