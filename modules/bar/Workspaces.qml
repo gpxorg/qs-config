@@ -16,7 +16,7 @@ Item {
     anchors.verticalCenter: parent.verticalCenter
     anchors.horizontalCenter: parent.horizontalCenter
     radius: 11
-    color: Colors.surfaceBackground
+    color: Colors.md3.surface_container_low
     implicitWidth: wsLayout.implicitWidth + 13
     implicitHeight: wsLayout.implicitHeight + 8
     z: 1
@@ -27,7 +27,7 @@ Item {
       height: 20
       radius: 8
     
-      color: Colors.primaryBorder
+      color: Colors.md3.primary_container
       anchors.verticalCenter: parent.verticalCenter
 
       property int activeIndex: {
@@ -73,7 +73,7 @@ Item {
             text: index
             weight: 3
             anchors.centerIn: parent
-            color: currentWs ? currentWs.active ? Colors.surface : Colors.primary : Colors.surfaceTextUnavailable
+            color: currentWs ? currentWs.active ? Colors.md3.on_primary_container: Colors.md3.secondary_fixed: Colors.md3.surface_container_highest
 
             Behavior on color {
               ColorAnimation { duration: 150 }

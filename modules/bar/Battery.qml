@@ -19,7 +19,7 @@ Item {
       color: "transparent"
       border.width: 1
       radius: 5
-      border.color: Colors.surfaceBorder
+      border.color: Colors.md3.surface_container_high
     
       Rectangle {
         id: batteryFill
@@ -28,7 +28,7 @@ Item {
         anchors.left: parent.left
         width: (parent.width - anchors.margins * 2) * Battery.value
         anchors.margins: 2
-        color: (Battery.charging || Battery.charged) ? Colors.successText : (Battery.isLow ? Colors.dangerText : Colors.surfaceText)
+        color: (Battery.charging || Battery.charged) ? Colors.md3.success_container : (Battery.isLow ? Colors.md3.error_container : Colors.md3.on_surface)
         radius: batteryBorder.radius / 1.5
       }
     }

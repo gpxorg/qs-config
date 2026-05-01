@@ -9,7 +9,7 @@ Scope {
   PanelWindow {
       required property var modelData
       screen: modelData
-      color: Colors.surface
+      color: Colors.md3.background
       anchors {
         top: true
         left: true

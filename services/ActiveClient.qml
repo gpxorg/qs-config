@@ -8,7 +8,7 @@ Singleton {
   id: root
   property string windowClass: "Desktop"
   property string windowTitle
-  readonly property int maxLength: 40
+  readonly property int maxLength: 30
 
   readonly property var categoryIcons: ({
     WebBrowser: "global",

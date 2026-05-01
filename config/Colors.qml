@@ -1,55 +1,89 @@
 pragma Singleton
 
-import Quickshell
 import QtQuick
-import qs.config
+import Quickshell
+import Quickshell.Io
 
 Singleton {
-  id: root
+	property alias md3: jsonAdapter.md3
 
-  property var currentTheme: {
-    var theme = Appearance.theme
-    var tone = Appearance.themeTone
-    if (theme === "dark" && tone === "static") return DarkStaticColors
-    if (theme === "dark" && tone === "dynamic") return DarkDynamicColors
-    if (theme === "light" && tone === "static") return LightStaticColors
-    if (theme === "light" && tone === "dynamic") return LightDynamicColors
-    return DarkStaticColors
-  }
+	FileView {
+		path: Quickshell.env("HOME") + "/.local/state/quickshell/generated/colors.json"
+		watchChanges: true
+		onFileChanged: reload()
 
-    readonly property string surface: currentTheme.surface.a10
-    readonly property string surfaceBorder: currentTheme.surface.a40
-    readonly property string surfaceBackground: currentTheme.surface.a20
-    readonly property string surfaceHovered: currentTheme.surface.a30
-    readonly property string surfaceClicked: currentTheme.surface.a50
+		JsonAdapter {
+			id: jsonAdapter
 
-    readonly property string surfaceText: currentTheme.surface.a60
-    readonly property string surfaceTextUnavailable: currentTheme.surface.a50
-    readonly property string surfaceTextHovered: white
+			readonly property Md3 md3: Md3 {}
+		}
+	}
 
-    readonly property string primary: currentTheme.primary.a10
-    readonly property string primaryBorder: currentTheme.primary.a40
-    readonly property string primaryBackground: currentTheme.primary.a20
-    readonly property string primaryHovered: currentTheme.primary.a30
-    readonly property string primaryClicked: currentTheme.primary.a50
+	component Md3: JsonObject {
+		property string background: "transparent"
+		property string error: "transparent"
+		property string error_container: "transparent"
+		property string inverse_on_surface: "transparent"
+		property string inverse_primary: "transparent"
+		property string inverse_surface: "transparent"
+		property string on_background: "transparent"
+		property string on_error: "transparent"
+		property string on_error_container: "transparent"
+		property string on_primary: "transparent"
+		property string on_primary_container: "transparent"
+		property string on_primary_fixed: "transparent"
+		property string on_primary_fixed_variant: "transparent"
+		property string on_secondary: "transparent"
+		property string on_secondary_container: "transparent"
+		property string on_secondary_fixed: "transparent"
+		property string on_secondary_fixed_variant: "transparent"
+		property string on_surface: "transparent"
+		property string on_surface_variant: "transparent"
+		property string on_tertiary: "transparent"
+		property string on_tertiary_container: "transparent"
+		property string on_tertiary_fixed: "transparent"
+		property string on_tertiary_fixed_variant: "transparent"
+		property string outline: "transparent"
+		property string outline_variant: "transparent"
+		property string primary: "transparent"
+		property string primary_container: "transparent"
+		property string primary_fixed: "transparent"
+		property string primary_fixed_dim: "transparent"
+		property string scrim: "transparent"
+		property string secondary: "transparent"
+		property string secondary_container: "transparent"
+		property string secondary_fixed: "transparent"
+		property string secondary_fixed_dim: "transparent"
+		property string shadow: "transparent"
+		property string surface: "transparent"
+		property string surface_bright: "transparent"
+		property string surface_container: "transparent"
+		property string surface_container_high: "transparent"
+		property string surface_container_highest: "transparent"
+		property string surface_container_low: "transparent"
+		property string surface_container_lowest: "transparent"
+		property string surface_dim: "transparent"
+		property string surface_tint: "transparent"
+		property string surface_variant: "transparent"
+		property string tertiary: "transparent"
+		property string tertiary_container: "transparent"
+		property string tertiary_fixed: "transparent"
+		property string tertiary_fixed_dim: "transparent"
 
-    // semantic colors
-    readonly property string success: currentTheme.success.a10
-    readonly property string successText: currentTheme.success.a20
-    readonly property string successBackground: currentTheme.success.a30
+		property string success: "transparent"
+		property string on_success: "transparent"
+		property string success_container: "transparent"
+		property string on_success_container: "transparent"
 
-    readonly property string danger: currentTheme.danger.a10
-    readonly property string dangerText: currentTheme.danger.a20
-    readonly property string dangerBackground: currentTheme.danger.a30
+		property string warning: "transparent"
+		property string on_warning: "transparent"
+		property string warning_container: "transparent"
+		property string on_warning_container: "transparent"
 
-    readonly property string warning: currentTheme.warning.a10
-    readonly property string warningText: currentTheme.warning.a20
-    readonly property string warningBackground: currentTheme.warning.a30
-
-    readonly property string info: currentTheme.info.a10
-    readonly property string infoText: currentTheme.info.a20
-    readonly property string infoBackground: currentTheme.info.a30
-
-
+		property string info: "transparent"
+		property string on_info: "transparent"
+		property string info_container: "transparent"
+		property string on_info_container: "transparent"
+	}
 
 }

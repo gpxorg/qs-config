@@ -26,46 +26,46 @@ Item {
     readonly property color bgColor: {
         switch (variant) {
         case "primary":
-            if (pressed) return Colors.primaryClicked
-            if (hovered) return Colors.primaryHovered
-            return Colors.primary
+            if (pressed) return Colors.md3.primary_fixed_dim
+            if (hovered) return Colors.md3.primary_fixed
+            return Colors.md3.primary_container
         case "secondary":
-            if (pressed) return Colors.surfaceClicked
-            if (hovered) return Colors.surfaceHovered
-            return Colors.surfaceBackground
+            if (pressed) return Colors.md3.surface_container_highest
+            if (hovered) return Colors.md3.surface_container_high
+            return Colors.md3.surface_container
         case "outline":
-            if (pressed) return Colors.surfaceBackground
-            if (hovered) return Colors.surface
-            return Colors.surfaceBackground
+            if (pressed) return Colors.md3.surface_container
+            if (hovered) return Colors.md3.surface_container_high
+            return Colors.md3.surface_container
         case "ghost":
-            if (pressed) return Colors.surfaceClicked
-            if (hovered) return Colors.surfaceBackground
+            if (pressed) return Colors.md3.surface_container
+            if (hovered) return Colors.md3.surface_container_high
             return "transparent"
         case "destructive":
-            if (pressed) return Colors.dangerBackground
-            if (hovered) return Colors.dangerBackground
-            return Colors.danger
+            if (pressed) return Colors.md3.danger_container
+            if (hovered) return Colors.md3.danger_container
+            return Colors.md3.danger
         default: return "transparent"
         }
     }
 
     readonly property color borderColor: {
         switch (variant) {
-        case "outline":      return hovered ? Colors.primaryBorder : Colors.surfaceBorder
-        case "primary":      return Colors.primaryBorder
-        case "destructive":  return Colors.danger
-        default:             return "transparent"
+        case "outline":     return hovered ? Colors.md3.primary : Colors.md3.outline_variant
+        case "primary":     return Colors.md3.outline_variant
+        case "destructive": return Colors.md3.danger
+        default:            return "transparent"
         }
     }
 
     readonly property color textColor: {
         switch (variant) {
-        case "primary":      return Colors.primary
-        case "secondary":    return Colors.surfaceText
-        case "outline":      return hovered ? Colors.primary : Colors.surfaceText
-        case "ghost":        return hovered ? Colors.primary : Colors.surfaceText
-        case "destructive":  return Colors.dangerText
-        default:             return Colors.surfaceText
+        case "primary":     return Colors.md3.on_primary_container
+        case "secondary":   return Colors.md3.on_surface_variant
+        case "outline":     return hovered ? Colors.md3.primary : Colors.md3.on_surface_variant
+        case "ghost":       return hovered ? Colors.md3.primary : Colors.md3.on_surface_variant
+        case "destructive": return Colors.md3.on_danger
+        default:            return Colors.md3.on_surface_variant
         }
     }
 

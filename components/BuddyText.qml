@@ -18,5 +18,5 @@ Text {
               : weight === 4 ? Appearance.font.extraBold
               : Appearance.font.regular
     }
-    color: Colors.surfaceText
+    color: Colors.md3.on_background
 }
